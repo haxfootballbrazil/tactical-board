@@ -2,13 +2,7 @@ import { Arrow, Group } from 'react-konva';
 import { useAppDispatch, useAppSelector } from "./state/Hooks";
 import { RouteObject, changeRouteColor, removeRoute } from "./state/RouteReducer";
 import setCursor from "./utils/setCursor";
-
-const defaultRouteColors: string[] = [
-  "#194bd4", /* blue */
-  "#fbff00", /* yellow */
-  "#e32033", /* red */
-  "#016109" /* green */
-];
+import defaultRouteColors from './utils/defaultRouteColors';
 
 interface RoutesProps {
   activeRoute?: RouteObject | null;
