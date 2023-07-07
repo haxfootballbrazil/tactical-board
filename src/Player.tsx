@@ -17,7 +17,7 @@ interface PlayerProps {
 
 function Player(props: PlayerProps) {
   const defaultRadius = 15;
-  const textWidth = 25;
+  const textWidth = 30;
   const fontSize = 15;
 
   return (
@@ -48,11 +48,12 @@ function Player(props: PlayerProps) {
         align={"center"}
         verticalAlign={"middle"}
         fill={"white"}
+        fontFamily={"Arial"}
         fontStyle={"900"}
         fontSize={fontSize}
         width={textWidth}
         x={-textWidth / 2}
-        y={-textWidth / 4}
+        y={-textWidth / 5}
       />
       <Text
         text={props.desc}
@@ -63,7 +64,7 @@ function Player(props: PlayerProps) {
         fontSize={fontSize / 1.5}
         width={textWidth * 2}
         x={-textWidth}
-        y={textWidth - 5}
+        y={textWidth - 10}
       />
     </Group>
   );
