@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
+import getParameter from "../utils/getParameter";
 
 export type RouteObject = {
   id: number;
@@ -14,7 +15,7 @@ export interface RouteState {
   lastRouteId: number;
 }
 
-const initialState: RouteState = {
+const initialState: RouteState = getParameter("routes") ?? {
   routes: [],
   lastRouteId: 1
 };

@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Vector2d } from "konva/lib/types";
+import getParameter from "../utils/getParameter";
 
 export type PlayerObject = {
   id: number;
@@ -16,7 +17,7 @@ export interface PlayerState {
   playerLastId: number;
 }
 
-const initialState: PlayerState = {
+const initialState: PlayerState = getParameter("players") ?? {
   players: [
     { id: 1, x: -25, y: -90, team: "red", avatar: "CB", desc: "CB Cima" },
     { id: 2, x: -25, y: 90, team: "red", avatar: "CB", desc: "CB Baixo" },
