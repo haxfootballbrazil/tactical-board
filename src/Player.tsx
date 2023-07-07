@@ -1,6 +1,8 @@
 import { Circle, Group, Text } from 'react-konva';
 import setCursor from './utils/setCursor';
 import { KonvaEventObject } from 'konva/lib/Node';
+import React from 'react';
+import Konva from 'konva';
 
 interface PlayerProps {
   x: number;
@@ -12,7 +14,7 @@ interface PlayerProps {
   setEditMode?: () => void;
   onClone?: (e: KonvaEventObject<MouseEvent>) => void;
   onRemove?: (e: KonvaEventObject<PointerEvent>) => void;
-  onDragEnd?: (e: KonvaEventObject<DragEvent>) => void;
+  onDragEnd?: (e: { x: number, y: number }) => void;
 }
 
 function Player(props: PlayerProps) {
@@ -20,8 +22,11 @@ function Player(props: PlayerProps) {
   const textWidth = 30;
   const fontSize = 15;
 
+  const player = React.useRef<Konva.Group>(null);
+
   return (
     <Group
+      ref={player}
       x={props.x}
       y={props.y}
       onMouseDown={e => {
@@ -32,9 +37,9 @@ function Player(props: PlayerProps) {
       onContextMenu={ e => props.onRemove && props.onRemove(e) }
       onMouseOver={ e => { setCursor(e, "pointer"); }}
       onMouseLeave={ e => { setCursor(e, "default"); }}
-      onDragEnd={ e => props.onDragEnd && props.onDragEnd(e) }
+      onDragEnd={ () => props.onDragEnd && props.onDragEnd(player.current!.position()) }
       draggable
-    >
+    > 
       <Circle
         radius={defaultRadius}
         stroke={"black"}

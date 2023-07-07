@@ -169,13 +169,13 @@ function Canvas(props: CanvasProps) {
                 setCursor(e, "default");
               }}
               onDragEnd={e => {
-                dispatch(movePlayer({ id: p.id, pos: { x: e.evt.x + getOffsetX(), y: e.evt.y + getOffsetY() } }));
+                dispatch(movePlayer({ id: p.id, pos: { x: e.x, y: e.y } }));
               }}
             />
           )}
 
           <Ball x={ball.position.x} y={ball.position.y} onDragEnd={
-            e => dispatch(moveBall({ x: e.evt.x + getOffsetX(), y: e.evt.y + getOffsetY() }))} />
+            e => dispatch(moveBall({ x: e.x, y: e.y }))} />
         </Layer>
       </Stage>
     </div>
