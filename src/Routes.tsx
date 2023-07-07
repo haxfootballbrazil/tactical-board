@@ -26,10 +26,13 @@ export default function Routes(props: RoutesProps) {
     return allRoutes.map(r =>
       <Arrow
         points={[...r.v.map(v => [v.x, v.y]).flat()]}
+        bezier={r.v.length > 2 ? true : false}
         stroke={defaultRouteColors[r.colorIndex]}
         strokeWidth={3}
         dash={r.type === "dashed" ? [33, 10] : []}
         tension={0}
+        lineJoin={"round"}
+        lineCap={"round"}
         fill={defaultRouteColors[r.colorIndex]}
         draggable
         onContextMenu={e => {
