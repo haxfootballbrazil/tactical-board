@@ -1,4 +1,5 @@
 export default function getParameter(name: string) {
   const queryString = window.location.search;
-  return JSON.parse(new URLSearchParams(queryString).get(name) + "");
+  const param = new URLSearchParams(queryString).get(name);
+  return JSON.parse(param ? atob(param + "") : "null");
 }

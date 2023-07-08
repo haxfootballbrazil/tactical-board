@@ -13,9 +13,9 @@ function App() {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.keyCode === 67 && e.ctrlKey) {
       const storePresent = store.getState().present;
-      const playersString = JSON.stringify(storePresent.players);
-      const ballString = JSON.stringify(storePresent.ball);
-      const routesString = JSON.stringify(storePresent.routes);
+      const playersString = encodeURIComponent(btoa(JSON.stringify(storePresent.players)));
+      const ballString = encodeURIComponent(btoa(JSON.stringify(storePresent.ball)));
+      const routesString = encodeURIComponent(btoa(JSON.stringify(storePresent.routes)));
 
       navigator.clipboard.writeText(
         new URL(`${window.location.origin}${window.location.pathname}?players=${playersString}&routes=${routesString}&ball=${ballString}`).href
