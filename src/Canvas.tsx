@@ -139,9 +139,9 @@ function Canvas(props: CanvasProps) {
         <Layer>
           <Background x={0} y={0} height={backgroundHeight} width={backgroundWidth} />
 
-          <Line points={[0, -270, 0, 270]} stroke={"#acde97"} strokeWidth={4} />
+          <Line points={[0, -268, 0, 268]} stroke={"#3e67cf"} strokeWidth={4} />
 
-          <Line points={[-309, -270, -309, 270]} stroke={"#ffa404"} strokeWidth={4} draggable
+          <Line points={[-309, -268, -309, 268]} stroke={"#ff9912"} strokeWidth={4} draggable
             dragBoundFunc={(pos) => { return { x: pos.x, y: 376 } }}
             onMouseDown={e => { e.cancelBubble = true; }}
             onMouseOver={e => { setCursor(e, "ew-resize"); }}
