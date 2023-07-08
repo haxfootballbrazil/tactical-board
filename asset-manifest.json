@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tactical-board/static/css/main.073c9b0a.css",
-    "main.js": "/tactical-board/static/js/main.40f07907.js",
+    "main.js": "/tactical-board/static/js/main.afd089b3.js",
     "index.html": "/tactical-board/index.html",
     "main.073c9b0a.css.map": "/tactical-board/static/css/main.073c9b0a.css.map",
-    "main.40f07907.js.map": "/tactical-board/static/js/main.40f07907.js.map"
+    "main.afd089b3.js.map": "/tactical-board/static/js/main.afd089b3.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.40f07907.js"
+    "static/js/main.afd089b3.js"
   ]
 }
